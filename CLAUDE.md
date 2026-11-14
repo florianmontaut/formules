@@ -30,8 +30,13 @@ caloporteurs. Dépôt : https://github.com/florianmontaut/formules (branche `mai
 ## Origine
 
 Code repris de GLviewer (`model/formula`, commit 5740833), lui-même issu du projet LEXER.
-loggerFPGA en avait une copie (`logger_app/model/formula`).
+loggerFPGA en avait une copie (`logger_app/model/formula`). Les deux applications
+utilisent maintenant ce paquet, installé depuis son étiquette de version ; leurs copies
+ont été retirées.
 
-## Non fait
+## Applications
 
-- GLviewer utilise encore sa copie (`model/formula`) ; loggerFPGA utilise ce paquet.
+- GLviewer : voies calculées (`model/computed.py`), boîtes de saisie des formules, des
+  tables et des caloporteurs. Garde les tests qui passent par son interface.
+- loggerFPGA : voies calculées en temps réel (`logger_app/model/math_channels.py`), qui
+  étend `Interpreter` par sous-classe pour ses propres fonctions.
